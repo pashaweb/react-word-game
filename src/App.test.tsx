@@ -24,14 +24,10 @@ const gameData1: IGameData = {
 
 describe('App and fails to load data', () => {
 
-  beforeEach(() => {
+  afterEach(() => {    
     jest.clearAllMocks();
   });
-  it('renders app', async () => {
-    render(<App />);
-    await screen.findByText(/ERRORLOADINGGAMES/i);
-    //console.log(container.innerHTML);
-  });
+
 
   it('renders app and data succses', async () => {
     //@ts-ignore
@@ -54,11 +50,3 @@ describe('App and fails to load data', () => {
 
 
 });
-
-
-
-function act(arg0: () => Promise<void>) {
-  throw new Error('Function not implemented.');
-}
-  // expect(linkElement).toBeInTheDocument();
-//});
