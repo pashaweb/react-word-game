@@ -2,27 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.game-grid-container{
-    display: grid;
-    width: 80%;
-    height: 80%;
-   
+.game-grid-container {
+    @apply grid 
+    w-96 h-96;
+
 }
-.game-grid-item{
-    background-color: #ccc;
-    border: 1px solid #000;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 300ms linear;
+
+.game-grid-item {
+    @apply bg-gray-300 border border-gray-600 rounded text-black text-lg font-bold flex justify-center items-center transition-colors duration-300;
+
 }
-.game-grid-item.hilight{
+
+.game-grid-item.hilight {
     background-color: yellow;
 }
-.game-grid-item.selected{
+
+.game-grid-item.selected {
     background-color: red;
 }

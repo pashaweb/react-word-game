@@ -31,21 +31,14 @@ function App() {
 
   return (
 
-    <>
+    <div className=' container mx-auto' >
       {
-        (appstate === AppstateEnum.ERRORLOADINGGAMES && <div>ERRORLOADINGGAMES</div>)
+        (appstate === AppstateEnum.ERRORLOADINGGAMES && <div className=''>ERRORLOADINGGAMES</div>)
 
-      }
-      {
-        appstate === AppstateEnum.SUCCESSLOADINGGAMES &&
-        <div>SUCCESSLOADINGGAMES</div>
-      }
-      {
-        (appstate === AppstateEnum.LOADINGAMES || appstate === AppstateEnum.LOADINGGAMEDATA) && <div>LOADING</div>
       }
       {isGamesListLoaded && <GameStats />}
       {currentGameState === GamestateEnum.PLAYGAME && <GameGrid /> }
-    </>
+    </div>
 
 
     // <div >
