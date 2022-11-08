@@ -9,7 +9,7 @@ export enum AppstateEnum {
     LOADINGGAMEDATA = 'LOADINGGAMEDATA',
     LOADNEXTGAME = 'LOADNEXTGAME',
     PLAYGAME = 'PLAYGAME',
-    WIN= 'WIN',
+    WIN = 'WIN',
 }
 
 export enum GamestateEnum {
