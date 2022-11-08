@@ -36,7 +36,7 @@ function GameGrid() {
 
 
   return (
-    <div style={inlineStyle} className="game-grid-container" >
+    <div style={inlineStyle} className="game-grid-container " >
       {gameGrid && gameGrid.charGrid.map((item) => {
         return <div
           onMouseDown={mouseDounHandler}

@@ -38,6 +38,7 @@ function App() {
       }
       {isGamesListLoaded && <GameStats />}
       {currentGameState === GamestateEnum.PLAYGAME && <GameGrid /> }
+      {currentGameState === GamestateEnum.WIN && <div className='game-win'>Win</div> }
     </div>
 
 

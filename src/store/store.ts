@@ -14,9 +14,9 @@ export enum AppstateEnum {
 
 export enum GamestateEnum {
     IDELE = 'IDELE',
-    LOADING = 'LOADING',
     PLAYGAME = 'PLAYGAME',
     ERROR = 'ERROR',
+    WIN = 'WIN'
 }
 
 export interface IWordLocations {
@@ -137,7 +137,6 @@ const useStore = create<Store & Actions>((set, get) => ({
 
     },
     setSelection: (point: string) => {
-        console.log('setSelection', point);
         const { currentGameGrid, currentStartSelectionPoint } = get();
         const charGrid: ICharGridItem[] | undefined = currentGameGrid?.charGrid;
         const startPoint: string = currentStartSelectionPoint;
@@ -165,6 +164,8 @@ const useStore = create<Store & Actions>((set, get) => ({
             set({ foundedWords });
             set({ currentGameGrid: { ...get().currentGameGrid!, charGrid: grid } });
             if (Object.keys(updateWordLocations).length === 0) {
+
+                set({ currentGameState: GamestateEnum.WIN, currentStartSelectionPoint: '' });
                 setTimeout(() => {
                     set({ wins: get().wins + 1 });
                     set({ appstate: AppstateEnum.LOADNEXTGAME });
