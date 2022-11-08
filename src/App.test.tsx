@@ -43,16 +43,13 @@ describe('App and fails to load data', () => {
       expect(gameStatsRendered).toBeInTheDocument();
       const gameWon = await screen.findByText(/Games Won: 0/i);
       expect(gameWon).toBeInTheDocument();
-      const currentGameNumber = await screen.findByText(/Current Game: 0/i);
+      const currentGameNumber = await screen.findByText(/Current Game: 1/i);
       expect(currentGameNumber).toBeInTheDocument();
       const word = await screen.findByText(/Word: natus/i);
       expect(word).toBeInTheDocument();
-      const translations = await screen.findByText(/Translations: {"0,0,1,1,2,2":"aei"}/i);
-      expect(translations).toBeInTheDocument();
       const grid = container.querySelector('.game-grid-container');
       expect(grid).toBeInTheDocument();
       expect(grid?.children.length).toBe(9);
-      console.log(container.innerHTML);
   });
 
 
