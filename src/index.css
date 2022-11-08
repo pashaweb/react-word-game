@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 .game-grid-container {
-    @apply grid 
-    w-96 h-96;
+    @apply grid w-96 h-96;
 
 }
 
