@@ -157,15 +157,14 @@ const useStore = create<Store & Actions>((set, get) => ({
             foundedWords.push(word_locations[selectionString]);
             const updateWordLocations = { ...word_locations };
             delete updateWordLocations[selectionString];
-            set({ word_locations: updateWordLocations });
+            set({ word_locations: updateWordLocations, currentStartSelectionPoint: '' });
             let grid = get().currentGameGrid?.charGrid || [];
             grid = clearIsHeighlighted(grid);
             grid = setFound(selection, grid);
-            set({ foundedWords });
-            set({ currentGameGrid: { ...get().currentGameGrid!, charGrid: grid } });
+            set({ currentGameGrid: { ...get().currentGameGrid!, charGrid: grid } , foundedWords});
             if (Object.keys(updateWordLocations).length === 0) {
 
-                set({ currentGameState: GamestateEnum.WIN, currentStartSelectionPoint: '' });
+                set({ currentGameState: GamestateEnum.WIN });
                 setTimeout(() => {
                     set({ wins: get().wins + 1 });
                     set({ appstate: AppstateEnum.LOADNEXTGAME });
