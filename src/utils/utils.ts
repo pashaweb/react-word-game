@@ -134,8 +134,8 @@ export const findSelection = (startPoint: string, hooverPoint: string): string[]
         const col = startCol + shiftObj.dirV * shiftObj.stepV * i;
         points.push(`${row},${col}`);
     }
-    // if (shiftObj.dirH === -1 || shiftObj.dirV === -1) {
-    //     points = points.reverse();
-    // }
+    if (shiftObj.dirH === -1 || shiftObj.dirV === -1) {
+        points = points.reverse();
+    }
     return points;
 }
