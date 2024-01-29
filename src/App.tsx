@@ -31,16 +31,20 @@ function App() {
 
   return (
 
-    <div className=' container mx-auto' >
-      {
-        (appstate === AppstateEnum.ERRORLOADINGGAMES && <div className=''>ERRORLOADINGGAMES</div>)
+    <>
+      <h1>
+        Find all the words in the grid to win!(lets check your spanish vocabulary)
+      </h1>
+      <div className=' container mx-auto' >
+        {
+          (appstate === AppstateEnum.ERRORLOADINGGAMES && <div className=''>ERRORLOADINGGAMES</div>)
 
-      }
-      {isGamesListLoaded && <GameStats />}
-      {currentGameState === GamestateEnum.PLAYGAME && <GameGrid /> }
-      {currentGameState === GamestateEnum.WIN && <div className='game-win'>Win</div> }
-    </div>
-
+        }
+        {isGamesListLoaded && <GameStats />}
+        {currentGameState === GamestateEnum.PLAYGAME && <GameGrid /> }
+        {currentGameState === GamestateEnum.WIN && <div className='game-win'>Win</div> }
+      </div>
+    </>
 
     // <div >
     //   {store.appstate}
